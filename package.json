@@ -1,6 +1,6 @@
 {
 	"name": "dotcjs",
-	"version": "1.0.0",
+	"version": "0.0.0",
 	"description": "A tool that converts file extensions such as .js or .d.ts to their .cjs and .d.cts counterparts",
 	"license": "MIT",
 	"scripts": {
