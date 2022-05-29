@@ -1,5 +1,5 @@
 {
-	"name": "cjsify",
+	"name": "dotcjs",
 	"version": "1.0.0",
 	"description": "A tool that converts file extensions such as .js or .d.ts to their .cjs and .d.cts counterparts",
 	"license": "MIT",
@@ -31,7 +31,7 @@
 		"extension"
 	],
 	"bin": {
-		"cjsify": "bin/cjsify.js"
+		"dotcjs": "bin/dotcjs.js"
 	},
 	"files": [
 		"bin/**/*.*",
@@ -93,10 +93,10 @@
 	"module": "./dist/esm/index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/wessberg/cjsify.git"
+		"url": "https://github.com/wessberg/dotcjs.git"
 	},
 	"bugs": {
-		"url": "https://github.com/wessberg/cjsify/issues"
+		"url": "https://github.com/wessberg/dotcjs/issues"
 	},
 	"engines": {
 		"node": ">=14.19.0"

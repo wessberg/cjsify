@@ -1,6 +1,6 @@
 <!-- SHADOW_SECTION_LOGO_START -->
 
-<div><img alt="Logo" src="https://raw.githubusercontent.com/wessberg/cjsify/master/documentation/asset/logo.png" height="150"   /></div>
+<div><img alt="Logo" src="https://raw.githubusercontent.com/wessberg/dotcjs/master/documentation/asset/logo.png" height="120"   /></div>
 
 <!-- SHADOW_SECTION_LOGO_END -->
 
@@ -12,10 +12,10 @@
 
 <!-- SHADOW_SECTION_BADGES_START -->
 
-<a href="https://npmcharts.com/compare/cjsify?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/cjsify.svg"    /></a>
-<a href="https://www.npmjs.com/package/cjsify"><img alt="NPM version" src="https://badge.fury.io/js/cjsify.svg"    /></a>
-<img alt="Dependencies" src="https://img.shields.io/librariesio/github/wessberg%2Fcjsify.svg"    />
-<a href="https://github.com/wessberg/cjsify/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/wessberg%2Fcjsify.svg"    /></a>
+<a href="https://npmcharts.com/compare/dotcjs?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/dotcjs.svg"    /></a>
+<a href="https://www.npmjs.com/package/dotcjs"><img alt="NPM version" src="https://badge.fury.io/js/dotcjs.svg"    /></a>
+<img alt="Dependencies" src="https://img.shields.io/librariesio/github/wessberg%2Fdotcjs.svg"    />
+<a href="https://github.com/wessberg/dotcjs/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/wessberg%2Fdotcjs.svg"    /></a>
 <a href="https://github.com/prettier/prettier"><img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg"    /></a>
 <a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"    /></a>
 <a href="https://www.patreon.com/bePatron?u=11315442"><img alt="Support on Patreon" src="https://img.shields.io/badge/patreon-donate-green.svg"    /></a>
@@ -74,9 +74,13 @@ This is a little tool that simply converts the extensions of filenames such as `
   - [pnpm](#pnpm)
   - [Run once with npx](#run-once-with-npx)
 - [Usage](#usage)
+  - [CLI usage](#cli-usage)
+  - [API Usage](#api-usage)
+    - [API options](#api-options)
 - [Contributing](#contributing)
 - [Maintainers](#maintainers)
 - [FAQ](#faq)
+  - [Is this really just an over-engineered `mv` or `cp` command?](#is-this-really-just-an-over-engineered-mv-or-cp-command)
 - [License](#license)
 
 <!-- SHADOW_SECTION_TOC_END -->
@@ -88,25 +92,25 @@ This is a little tool that simply converts the extensions of filenames such as `
 ### npm
 
 ```
-$ npm install cjsify
+$ npm install dotcjs
 ```
 
 ### Yarn
 
 ```
-$ yarn add cjsify
+$ yarn add dotcjs
 ```
 
 ### pnpm
 
 ```
-$ pnpm add cjsify
+$ pnpm add dotcjs
 ```
 
 ### Run once with npx
 
 ```
-$ npx cjsify
+$ npx dotcjs
 ```
 
 <!-- SHADOW_SECTION_INSTALL_END -->
@@ -117,7 +121,7 @@ $ npx cjsify
 
 <!-- SHADOW_SECTION_USAGE_END -->
 
-`cjsify` can be used in a variety of ways. The most straightforward usage is directly from the CLI:
+`dotcjs` can be used in a variety of ways. The most straightforward usage is directly from the CLI:
 
 ### CLI usage
 
@@ -126,20 +130,20 @@ You can use this library as a CLI to convert the extensions of files matching an
 The following command renames all files ending with `.js`, `.js.map`, `.d.ts`, and `.d.ts.map` matched by the glob `**/*.*` to their respective `.cjs` counterparts:
 
 ```
-cjsify **/*.*
+dotcjs **/*.*
 ```
 
 You can also pass in second argument, `outDir`, to copy them to a different directory:
 
 ```
-cjsify dist/** dist/cjs
+dotcjs dist/** dist/cjs
 ```
 
 Here's an overview of the options that can be passed via the CLI:
 
 ```
-$ cjsify --help
-Usage: cjsify transform [options] <input> [outDir]
+$ dotcjs --help
+Usage: dotcjs transform [options] <input> [outDir]
 
 Cconverts file extensions such as .js or .d.ts to their .cjs and .d.cts counterparts based on the input glob
 
@@ -159,7 +163,7 @@ You can also just run `cjstoesm without explicitly passing in the `transform` co
 You can also use this library programmatically:
 
 ```ts
-import {transform} from "cjsify";
+import {transform} from "dotcjs";
 
 await transform({
 	input: "src/**/*.*"
@@ -169,7 +173,7 @@ await transform({
 Alternatively, if you don't want the transform function to automatically write files to disk, you can pass `write: false` as an option and handle it yourself:
 
 ```ts
-import {transform} from "cjsify";
+import {transform} from "dotcjs";
 import fs from "fs";
 
 const result = await transform({
@@ -243,6 +247,10 @@ Do you want to contribute? Awesome! Please follow [these recommendations](./CONT
 ## FAQ
 
 <!-- SHADOW_SECTION_FAQ_END -->
+
+### Is this really just an over-engineered `mv` or `cp` command?
+
+Yes. It truly is all it is.
 
 <!-- SHADOW_SECTION_LICENSE_START -->
 

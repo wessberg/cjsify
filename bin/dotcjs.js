@@ -2,4 +2,4 @@
 'use strict';
 
 import "../dist/cli/index.js";
-process.title = 'cjsify';
+process.title = 'dotcjs';
