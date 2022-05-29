@@ -16,7 +16,7 @@
 		"prewatch": "pnpm run clean",
 		"watch": "pnpm run prewatch && rollup -c rollup.config.js --watch",
 		"rollup": "rollup -c rollup.config.js",
-		"preversion": "pnpm run lint && pnpm run build",
+		"preversion": "pnpm run lint && pnpm run build && node bin/dotcjs.js dist/cjs",
 		"version": "pnpm run preversion && pnpm run generate:all && git add .",
 		"release": "np --no-cleanup --no-yarn",
 		"update:check": "pnpx npm-check-updates -x --dep dev,prod",
