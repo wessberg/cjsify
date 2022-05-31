@@ -1,4 +1,13 @@
-# 1.0.0 (2022-05-29)
+## [1.0.1](https://github.com/wessberg/dotcjs/compare/v1.0.0...v1.0.1) (2022-05-31)
+
+
+### Bug Fixes
+
+* use ansi-colors instead of Chalk for better CJS fallback support ([2b57134](https://github.com/wessberg/dotcjs/commit/2b571349158f3bec5a3370cdece0d446e3e054c1))
+
+
+
+# [1.0.0](https://github.com/wessberg/dotcjs/compare/d0d20d82146369019551822c4bfc5e3afac7e73d...v1.0.0) (2022-05-29)
 
 
 ### Bug Fixes
