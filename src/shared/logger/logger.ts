@@ -1,5 +1,5 @@
 import {LogLevelKind} from "./log-level-kind.js";
-import chalk from "chalk";
+import color from "ansi-colors";
 import {Loggable} from "./loggable.js";
 
 /**
@@ -12,10 +12,11 @@ export class Logger implements Loggable {
 
 	constructor(readonly logLevel: LogLevelKind) {}
 
+	
 	/**
 	 * Logs info-related messages
 	 */
-	info(...messages: unknown[]): void {
+	 info(...messages: unknown[]): void {
 		if (this.logLevel < LogLevelKind.INFO) return;
 		console.log(...messages);
 	}
@@ -25,7 +26,7 @@ export class Logger implements Loggable {
 	 */
 	verbose(...messages: unknown[]): void {
 		if (this.logLevel < LogLevelKind.VERBOSE) return;
-		console.log(chalk[this.VERBOSE_COLOR]("[VERBOSE]"), ...messages);
+		console.log(color[this.VERBOSE_COLOR]("[VERBOSE]"), ...messages);
 	}
 
 	/**
@@ -33,13 +34,13 @@ export class Logger implements Loggable {
 	 */
 	debug(...messages: unknown[]): void {
 		if (this.logLevel < LogLevelKind.DEBUG) return;
-		console.log(chalk[this.DEBUG_COLOR]("[DEBUG]"), ...messages);
+		console.log(color[this.DEBUG_COLOR]("[DEBUG]"), ...messages);
 	}
 
 	/**
 	 * Logs warning-related messages
 	 */
 	warn(...messages: unknown[]): void {
-		console.warn(chalk[this.WARNING_COLOR](`(!)`, ...messages));
+		console.log(color[this.WARNING_COLOR](`(!)`), ...messages);
 	}
 }
